@@ -167,3 +167,63 @@ char
 
 ## ● 请你解释Object若不重写hashCode()的话，hashCode()如何计算出来的？
 
+
+
+### 说一下排序，时间复杂度，稳定性
+
+### String拼接字符串的缺点
+
+String是java中一个不可变的类，一旦被实例化就无法被修改，所以拼接字符串，就是生成了一个新的字符串，即原变量存储了一个新的String对象的引用。可以使用加号，或者String类中的concat方法。也可以使用StringBuilder或者StringBuffer来实现字符串拼接，这两个类的对象是可以修改的。在多线程操作时使用stringBuffer，单线程操作使用StringBuilder。
+
+使用加号进行字符串拼接，是将 String 转成了 StringBuilder 后，使用其 `append` 方法进行处理的。
+
+使用concat()拼接，会首先创建了一个字符数组，长度是已有字符串和待拼接字符串的长度之和，再把两个字符串的值复制到新的字符数组中，并使用这个字符数组创建一个新的 String 对象并返回。
+
+
+
+### String是基本的数据类型吗
+
+String不是基本数据类型，java中的基本数据类型为boolean, byte,short, char, int, long, float, double八种
+
+### StringBuffer是线程安全的吗
+
+是，Stringbuffer大部分方法上都加了synchronize加锁实现的。也因此StringBuffer执行的效率要低于StringBuilder。
+
+### 两个对象equal()之后是不是相等的
+
+equal()默认的行为是比较两个对象的引用，但在大部分java的类库中都重新实现了equals()方法，改成了比较两个对象的实际内容，例如String和Integer等。
+
+### Java锁，synchronized可以修饰静态方法吗
+
+介绍一下wait()
+
+### 使用哪个版本的jdk，有哪些特性
+
+平时主要用java 8。java 8首要的一个新特性是支持lamda表达式和函数接口，用lambda表达式来替换单方法接口，可以把函数当成参数传递给某个方法，简化了一部分需要使用匿名类的场景（这里再去复习一下匿名类的使用场景）最简单的Lambda表达式可由逗号分隔的参数列表、**->**符号和语句块组成。函数接口是为了兼容lambda表达式产生的概念，指的是只有一个函数的接口，这样的接口可以隐式的转化成lambda表达式。Java 8 提供了一个注解**@FunctionalInterface**，来显示的说明函数式接口。
+
+java8的另一个特性是接口中可以定义默认方法和静态方法。接口提供的默认方法会被接口的实现类继承或者重写。这样的目的是可以在不破坏现有兼容性的前提下，往接口中添加新的方法。
+
+java8也引进了新的Date-Time Api 来改进时间，日期的处理。
+
+java8支持重复注解
+
+支持方法引用，通常和lambda表达式结合着使用，没用过不了解
+
+
+
+
+
+
+
+### Java list和set的区别，是否继承自Collection接口
+
+list和set继承自Collection接口，map不是。
+
+list和set分别是collection的两个子接口，区别为：
+
+1. list及其实现类是可变大小的列表，适用于按照数值索引访问元素
+2. Set集合无需存储，并且不可以保存重复的元素
+
+
+
+### 重载和重写的区别
