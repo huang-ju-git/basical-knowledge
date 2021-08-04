@@ -95,14 +95,6 @@ class AutoUnboxingTest {
 
 
 
-## ● 请你说明String 和StringBuffer和StringBuilder的区别
-
-考察点：数据类型
-
-
-
-
-
 ## ● 请说明String是最基本的数据类型吗?
 
 考察点：数据类型
@@ -113,10 +105,6 @@ class AutoUnboxingTest {
 java.lang.String类是final类型的，因此不可以继承这个类、不能修改这个类。为了提高效率节省空间，我们应该用StringBuffer类。
 
 
-
-## ● 请你谈谈大O符号(big-O notation)并给出不同数据结构的例子
-
-## ● 请你解释什么是值传递和引用传递？
 
 
 
@@ -139,22 +127,6 @@ char
 
 
 
-## ● 请你解释为什么会出现4.0-3.6=0.40000001这种现象？
-
-
-
-## ● 请你讲讲一个十进制的数在内存中是怎么存的？
-
-
-
-## ● 请你说说Lamda表达式的优缺点。
-
-
-
-## ● 你知道java8的新特性吗，请简单介绍一下
-
-
-
 ## ● 请你说明符号“==”比较的是什么？
 
 考点：基础
@@ -169,7 +141,7 @@ char
 
 
 
-### 说一下排序，时间复杂度，稳定性
+### 
 
 ### String拼接字符串的缺点
 
@@ -341,10 +313,20 @@ p2是摇头耶稣 20
 
 方法1：通过重写clone()方法进行深拷贝
 
-
+[Java 浅拷贝和深拷贝的理解和实现方式 - 摇头耶稣 - 博客园 (cnblogs.com)](https://www.cnblogs.com/shakinghead/p/7651502.html)
 
 ### **反射机制实现对数据库数据的增、查例子**
 
 ### java的不同访问等级
 
 ### 什么是java的控制反转
+
+
+
+### 对java平台的理解
+
+ava 本身是一种面向对象的语言，最显著的特性有两个方面，一是所谓的“书写一次，到处运行”（Write once, run anywhere），能够非常容易地获得跨平台能力；另外就是垃圾收集（GC, Garbage Collection），Java 通过垃圾收集器（Garbage Collector）回收分配内存，大部分情况下，程序员不需要自己操心内存的分配和回收。
+
+我们日常会接触到 JRE（Java Runtime Environment）或者 JDK（Java Development Kit）。 JRE，也就是 Java 运行环境，包含了 JVM 和 Java 类库，以及一些模块等。而 JDK 可以看作是 JRE 的一个超集，提供了更多工具，比如编译器、各种诊断工具等。
+
+对于“Java 是解释执行”这句话，这个说法不太准确。我们开发的 Java 的源代码，首先通过 Javac 编译成为字节码（bytecode），然后，在运行时，通过 Java 虚拟机（JVM）内嵌的解释器将字节码转换成为最终的机器码。但是常见的 JVM，比如我们大多数情况使用的 Oracle JDK 提供的 Hotspot JVM，都提供了 JIT（Just-In-Time）编译器，也就是通常所说的动态编译器，JIT 能够在运行时将热点代码编译成机器码，这种情况下部分热点代码就属于编译执行，而不是解释执行了。Java 通过字节码和 Java 虚拟机（JVM）这种跨平台的抽象，屏蔽了操作系统和硬件的细节，这也是实现“一次编译，到处执行”的基础。
